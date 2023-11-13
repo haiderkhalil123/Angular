@@ -1,27 +1,90 @@
-# AngularTest
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.4.
+# Angular Application
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Project Overview
 
-## Code scaffolding
+This Angular project demonstrates the integration of various powerful libraries for creating interactive charts, tables, and Gantt charts. The project utilizes the following technologies:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- [Highcharts](https://www.highcharts.com/): Interactive JavaScript charts for your web pages.
+- [Angular Material Table](https://material.angular.io/components/table/overview): A set of UI components for building high-quality, responsive user interfaces.
+- [Angular Material Expandable Table](https://github.com/elhigu/material-table): An extension for Angular Material Table that allows rows to be expanded to show additional content.
+- [Angular Gantt Chart](https://www.angular-gantt.com/): A Gantt chart component for Angular.
+- [AG Grid](https://www.ag-grid.com/): A feature-rich Angular grid library.
 
-## Build
+## Getting Started
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Prerequisites
 
-## Running unit tests
+Make sure you have the following installed on your machine:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- [Node.js](https://nodejs.org/): JavaScript runtime
+- [Angular CLI](https://angular.io/cli): Command Line Interface for Angular
 
-## Running end-to-end tests
+### Installation
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1. Clone the repository:
 
-## Further help
+    ```bash
+    git clone https://github.com/yourusername/your-angular-project.git
+    ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+2. Navigate to the project directory:
+
+    ```bash
+    cd your-angular-project
+    ```
+
+3. Install dependencies:
+
+    ```bash
+    npm install
+    ```
+
+### Running the Application
+
+Run the development server:
+
+```bash
+ng serve
+```
+
+### Features
+
+### 1. Highcharts Integration:
+- Sample Highcharts components are located in the src/app/highcharts directory.
+
+2. Angular Material Table
+- Basic Angular Material Table is implemented in the src/app/material-table directory
+
+3. Angular Material Expandable Table:
+- An extension of Angular Material Table with expandable rows is showcased in the src/app/expandable-table directory.
+
+4. Angular Gantt Chart:
+- Gantt chart functionality can be found in the src/app/gantt-chart directory.
+
+5. AG Grid:
+- AG Grid is used for advanced grid functionalities in the src/app/ag-grid directory.
+
+### Contributing
+
+Contributions are welcome! If you find any issues or want to add new features, please open an issue or submit a `pull request`.
+
+### ScreenShots
+
+![High Chart](<img src="/src/assets/images/Screenshot (26).png" alt="Hight Chart" width="80" height="80">)
+
+![High Chart](<img src="/src/assets/images/Screenshot (27).png" alt="Hight Chart" width="80" height="80">)
+
+![High Chart](<img src="/src/assets/images/Screenshot (28).png" alt="Hight Chart" width="80" height="80">)
+
+![High Chart](<img src="/src/assets/images/Screenshot (29).png" alt="Hight Chart" width="80" height="80">)
+
+![High Chart](<img src="/src/assets/images/Screenshot (31).png" alt="Hight Chart" width="80" height="80">)
+
+![High Chart](<img src="/src/assets/images/Screenshot (32).png" alt="Hight Chart" width="80" height="80">)
+
+![High Chart](<img src="/src/assets/images/Screenshot (33).png" alt="Hight Chart" width="80" height="80">)
+
+![High Chart](<img src="/src/assets/images/Screenshot (34).png" alt="Hight Chart" width="80" height="80">)
+
