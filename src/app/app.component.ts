@@ -134,7 +134,7 @@ export class AppComponent {
       type: 'pie',
     },
     title: {
-      text: 'Complex Highcharts Chart',
+      text: 'Pie Chart',
     },
     caption: { text: '' },
 
