@@ -88,3 +88,6 @@ Contributions are welcome! If you find any issues or want to add new features, p
 
 ![High Chart](<img src="src/assets/images/Screenshot (34).png" alt="Hight Chart" width="80" height="80">)
 
+![3D and Neagtive Values Chart](https://github.com/haiderkhalil123/Angular/assets/139443148/feb6fb3e-309e-42e2-bbdd-bdab61f7cb96)
+
+![Pie Chart](https://github.com/haiderkhalil123/Angular/assets/139443148/8d8855f3-c53e-426d-aa2a-a68fee5ff180)
