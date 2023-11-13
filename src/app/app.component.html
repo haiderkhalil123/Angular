@@ -1,0 +1,539 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+
+
+<mat-tab-group>
+  <mat-tab label="Muhammad's Chart">
+    <div *ngFor="let chartConfig of ChartOptions; let i = index">
+      <div [id]="'chart-container-' + i" style="width: 100%; height: 400px;"></div>
+    </div>
+  </mat-tab>
+  <mat-tab label="Charts">
+    <mat-tab-group>
+      <mat-tab label="Bubble Chart">
+        <highcharts-chart [Highcharts]="Highcharts" [constructorType]="chartConstructor" [options]="Bubbels"
+          [callbackFunction]="chartCallback" [(update)]="updateFlag" [oneToOne]="oneToOneFlag"
+          [runOutsideAngular]="runOutsideAngular" style="width: 100%; height: 400px; display: block"></highcharts-chart>
+        <!-- <highcharts-chart [Highcharts]="Highcharts" [constructorType]="chartConstructor" [options]="options"
+          [callbackFunction]="chartCallback" [(update)]="updateFlag" [oneToOne]="oneToOneFlag"
+          [runOutsideAngular]="runOutsideAngular" style="width: 100%; height: 400px; display: block"></highcharts-chart> -->
+      </mat-tab>
+      <mat-tab label="Area Chart">
+        <mat-grid-list cols="2" rowHeight="2:2">
+          <mat-grid-tile>
+            <mat-card class="example-card">
+              <highcharts-chart [Highcharts]="Highcharts" [constructorType]="chartConstructor" [options]="AreaChart"
+                [callbackFunction]="chartCallback" [(update)]="updateFlag" [oneToOne]="oneToOneFlag"
+                [runOutsideAngular]="runOutsideAngular"
+                style="width: 100%; height: 400px; display: block"></highcharts-chart>
+            </mat-card>
+          </mat-grid-tile>
+          <!-- <mat-grid-tile class="w-50">
+            <mat-card class="example-card">
+              <highcharts-chart [Highcharts]="Highcharts" [constructorType]="chartConstructor" [options]="chartOptions"
+                [callbackFunction]="chartCallback" [(update)]="updateFlag" [oneToOne]="oneToOneFlag"
+                [runOutsideAngular]="runOutsideAngular"
+                style="width: auto; height: 400px; display: block"></highcharts-chart>
+            </mat-card>
+          </mat-grid-tile> -->
+        </mat-grid-list>
+      </mat-tab>
+      <mat-tab label="Column Chart">
+        <mat-grid-list cols="2" rowHeight="2:2">
+          <mat-grid-tile>
+            <mat-card class="example-card">
+              <mat-card-content>
+                <highcharts-chart [Highcharts]="Highcharts" [constructorType]="chartConstructor"
+                  [options]="ColumnwithDrilldown" [callbackFunction]="chartCallback" [(update)]="updateFlag"
+                  [oneToOne]="oneToOneFlag" [runOutsideAngular]="runOutsideAngular"
+                  style="width: 100%; height: 500px; display: block"></highcharts-chart>
+              </mat-card-content>
+            </mat-card>
+          </mat-grid-tile>
+          <mat-grid-tile class="w-50">
+            <mat-card class="example-card">
+              <mat-card-content>
+                <highcharts-chart [Highcharts]="Highcharts" [constructorType]="chartConstructor"
+                  [options]="NegativeValues" [callbackFunction]="chartCallback" [(update)]="updateFlag"
+                  [oneToOne]="oneToOneFlag" [runOutsideAngular]="runOutsideAngular"
+                  style="width: 100%; height: 500px; display: block"></highcharts-chart>
+              </mat-card-content>
+            </mat-card>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-tab>
+      <mat-tab label="Pie Chart">
+        <mat-grid-list cols="2" rowHeight="2:2">
+          <mat-grid-tile class="w-50">
+            <mat-card class="example-card">
+              <highcharts-chart [Highcharts]="Highcharts" [constructorType]="chartConstructor" [options]="PieChart"
+                [callbackFunction]="chartCallback" [(update)]="updateFlag" [oneToOne]="oneToOneFlag"
+                [runOutsideAngular]="runOutsideAngular"
+                style="width: auto; height: 400px; display: block"></highcharts-chart>
+            </mat-card>
+          </mat-grid-tile>
+          <!-- <mat-grid-tile class="w-50">
+            <mat-card class="example-card">
+              <highcharts-chart [Highcharts]="Highcharts" [constructorType]="chartConstructor" [options]="chartOptions"
+                [callbackFunction]="chartCallback" [(update)]="updateFlag" [oneToOne]="oneToOneFlag"
+                [runOutsideAngular]="runOutsideAngular"
+                style="width: auto; height: 400px; display: block"></highcharts-chart>
+            </mat-card>
+          </mat-grid-tile> -->
+        </mat-grid-list>
+      </mat-tab>
+      <mat-tab label="SplineArea Chart">
+        <highcharts-chart [Highcharts]="Highcharts" [constructorType]="chartConstructor" [options]="PopulationChart"
+          [callbackFunction]="chartCallback" [(update)]="updateFlag" [oneToOne]="oneToOneFlag"
+          [runOutsideAngular]="runOutsideAngular" style="width: auto; height: 500px; display: block"></highcharts-chart>
+        <mat-grid-list cols="2" rowHeight="2:2">
+          <mat-grid-tile class="w-50">
+            <mat-card class="example-card">
+              <mat-card-content>
+                <highcharts-chart [Highcharts]="Highcharts" [constructorType]="chartConstructor"
+                  [options]="PopulationChart" [callbackFunction]="chartCallback" [(update)]="updateFlag"
+                  [oneToOne]="oneToOneFlag" [runOutsideAngular]="runOutsideAngular"
+                  style="width: auto; height: 500px; display: block"></highcharts-chart>
+              </mat-card-content>
+            </mat-card>
+          </mat-grid-tile>
+          <!-- <mat-grid-tile>
+            <mat-card class="example-card">
+              <mat-card-content>
+                <highcharts-chart [Highcharts]="Highcharts" [constructorType]="chartConstructor" [options]="PopulationChart"
+                  [callbackFunction]="chartCallback" [(update)]="updateFlag" [oneToOne]="oneToOneFlag"
+                  [runOutsideAngular]="runOutsideAngular"
+                  style="width: 100%; height: 500px; display: block"></highcharts-chart>
+              </mat-card-content>
+            </mat-card>
+          </mat-grid-tile> -->
+        </mat-grid-list>
+      </mat-tab>
+      <mat-tab label="Pie, Column, Spline">
+        <mat-grid-list cols="2" rowHeight="2:2">
+          <mat-grid-tile>
+            <mat-card class="example-card">
+              <mat-card-content>
+                <highcharts-chart [Highcharts]="Highcharts" [constructorType]="chartConstructor" [options]="Petroleum"
+                  [callbackFunction]="chartCallback" [(update)]="updateFlag" [oneToOne]="oneToOneFlag"
+                  [runOutsideAngular]="runOutsideAngular"
+                  style="width: 100%; height: 500px; display: block"></highcharts-chart>
+              </mat-card-content>
+            </mat-card>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-card class="example-card">
+              <highcharts-chart [Highcharts]="Highcharts" [constructorType]="chartConstructor" [options]="RandomData"
+                [callbackFunction]="chartCallback" [(update)]="updateFlag" [oneToOne]="oneToOneFlag"
+                [runOutsideAngular]="runOutsideAngular"
+                style="width: auto; height: 400px; display: block"></highcharts-chart>
+            </mat-card>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-tab>
+
+  <mat-tab label="Population Charts">
+    <mat-grid-list cols="2" rowHeight="2:2">
+      <mat-grid-tile class="w-50">
+        <mat-card class="example-card">
+          <mat-card-content>
+            <highcharts-chart [Highcharts]="Highcharts" [constructorType]="chartConstructor" [options]="PopulationChart"
+              [callbackFunction]="chartCallback" [(update)]="updateFlag" [oneToOne]="oneToOneFlag"
+              [runOutsideAngular]="runOutsideAngular"
+              style="width: auto; height: 500px; display: block"></highcharts-chart>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-card class="example-card">
+          <mat-card-content>
+            <highcharts-chart [Highcharts]="Highcharts" [constructorType]="chartConstructor" [options]="PopulationChart"
+              [callbackFunction]="chartCallback" [(update)]="updateFlag" [oneToOne]="oneToOneFlag"
+              [runOutsideAngular]="runOutsideAngular"
+              style="width: 100%; height: 500px; display: block"></highcharts-chart>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <mat-grid-list cols="2" rowHeight="2:2">
+      <mat-grid-tile class="w-50">
+        <mat-card class="example-card">
+          <mat-card-content>
+            <highcharts-chart [Highcharts]="Highcharts" [constructorType]="chartConstructor" [options]="PopulationChart"
+              [callbackFunction]="chartCallback" [(update)]="updateFlag" [oneToOne]="oneToOneFlag"
+              [runOutsideAngular]="runOutsideAngular"
+              style="width: auto; height: 500px; display: block"></highcharts-chart>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-card class="example-card">
+          <mat-card-content>
+            <highcharts-chart [Highcharts]="Highcharts" [constructorType]="chartConstructor" [options]="PopulationChart"
+              [callbackFunction]="chartCallback" [(update)]="updateFlag" [oneToOne]="oneToOneFlag"
+              [runOutsideAngular]="runOutsideAngular"
+              style="width: 100%; height: 500px; display: block"></highcharts-chart>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <highcharts-chart [Highcharts]="Highcharts" [constructorType]="chartConstructor" [options]="PopulationChart"
+      [callbackFunction]="chartCallback" [(update)]="updateFlag" [oneToOne]="oneToOneFlag"
+      [runOutsideAngular]="runOutsideAngular" style="width: 100%; height: 500px; display: block"></highcharts-chart>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>
+          Population Growth of PK, IN, CN, US (1947-2021)
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <highcharts-chart [Highcharts]="Highcharts" [constructorType]="chartConstructor" [options]="PopulationChart"
+          [callbackFunction]="chartCallback" [(update)]="updateFlag" [oneToOne]="oneToOneFlag"
+          [runOutsideAngular]="runOutsideAngular" style="width: 100%; height: 500px; display: block"></highcharts-chart>
+      </mat-card-content>
+    </mat-card>
+  </mat-tab>
+  <mat-tab label="Simple Table">
+    <ng-template mat-tab-label><mat-icon>table_rows</mat-icon>Simple Table</ng-template>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          Periodic Table
+        </mat-card-title>
+        <mat-card-subtitle>
+          <a href="https://en.wikipedia.org/wiki/Periodic_table#Elements_(IUPAC)">Link Source</a>
+        </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-actions align="end">
+        <button mat-mini-fab color="accent" (click)="openDialog()">
+          <mat-icon>add</mat-icon>
+        </button>
+      </mat-card-actions>
+      <mat-card-content>
+
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+          <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+
+          <!-- Position Column -->
+          <ng-container matColumnDef="demo-position">
+            <th mat-header-cell *matHeaderCellDef>No.</th>
+            <td mat-cell *matCellDef="let element">{{ element.position }}</td>
+          </ng-container>
+          <!-- Edit Column -->
+          <ng-container matColumnDef="edit">
+            <th mat-header-cell *matHeaderCellDef>Actions</th>
+
+            <td mat-cell *matCellDef="let element; let i = index">
+              <button mat-mini-fab color="primary" (click)="onEdit(i)">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-mini-fab color="warn" (click)="deleteData(i)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef>Name</th>
+            <td mat-cell *matCellDef="let element; value">
+              {{ element.name }}
+            </td>
+          </ng-container>
+          <!-- Weight Column -->
+          <ng-container matColumnDef="weight">
+            <th mat-header-cell *matHeaderCellDef>Weight</th>
+            <td mat-cell *matCellDef="let element">{{ element.weight }}</td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="symbol">
+            <th mat-header-cell *matHeaderCellDef>Symbol</th>
+            <td mat-cell *matCellDef="let element">{{ element.symbol }}</td>
+          </ng-container>
+          <!-- Type Column -->
+          <ng-container matColumnDef="type">
+            <th mat-header-cell *matHeaderCellDef>Type</th>
+            <td mat-cell *matCellDef="let element">
+              <strong>{{ element.type }}</strong>
+            </td>
+          </ng-container>
+          <!--Start Date Column -->
+          <ng-container matColumnDef="startdate">
+            <th mat-header-cell *matHeaderCellDef>Start Date</th>
+            <td mat-cell *matCellDef="let element">
+              <strong>{{ element.startdate | date : "MM/dd/yyyy" }}</strong>
+            </td>
+          </ng-container>
+          <!--End Date Column -->
+          <ng-container matColumnDef="enddate">
+            <th mat-header-cell *matHeaderCellDef>End Date</th>
+            <td mat-cell *matCellDef="let element">
+              <strong>{{ element.enddate | date : "MM/dd/yyyy" }}</strong>
+            </td>
+          </ng-container>
+
+          <!-- Type Column -->
+          <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef>Description</th>
+            <td mat-cell *matCellDef="let element">
+              <strong>{{ element.description }}</strong>
+            </td>
+          </ng-container>
+
+          <!-- CheckBox Column -->
+          <ng-container matColumnDef="select">
+            <th mat-header-cell *matHeaderCellDef>
+              <mat-checkbox (change)="$event ? toggleAllRows() : null"
+                [checked]="selection.hasValue() && isAllSelected()"
+                [indeterminate]="selection.hasValue() && !isAllSelected()" [aria-label]="checkboxLabel()">
+              </mat-checkbox>
+            </th>
+            <td mat-cell *matCellDef="let row">
+              <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null"
+                [checked]="selection.isSelected(row)" [aria-label]="checkboxLabel(row)">
+              </mat-checkbox>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+        </table>
+      </mat-card-content>
+    </mat-card>
+  </mat-tab>
+  <mat-tab label="Ag Grid">
+    <ng-template mat-tab-label><mat-icon>grid_on</mat-icon> AG GRID</ng-template>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title> AG Grid </mat-card-title>
+      </mat-card-header>
+      <mat-card-actions align="end">
+        <button mat-mini-fab color="primary" matTooltip="Add New" (click)="openGridform()">
+          <mat-icon>add</mat-icon>
+        </button>
+        <button mat-mini-fab color="warn" matTooltip="Delete All Data" (click)="clearData()">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card-actions>
+
+      <ag-grid-angular style="width: 100%; height: 50vw" class="ag-theme-alpine" [columnDefs]="columnDefs"
+        [defaultColDef]="defaultColDef" [rowData]="rowData$ | async" [rowSelection]="'multiple'" [animateRows]="true"
+        (gridReady)="onGridReady($event)" (cellClicked)="onCellClicked($event)" [animateRows]="true"
+        [pagination]="true"></ag-grid-angular>
+    </mat-card>
+  </mat-tab>
+  <mat-tab label="Buttons">
+    <button mat-raised-button (click)="openBottomSheet()">
+      Open Bottom Sheet
+    </button>
+    <button mat-raised-button (click)="openSnackBar()">Open Snack Bar</button>
+  </mat-tab>
+  <mat-tab label="Exapndable Table">
+    <mat-card>
+      <table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z8">
+        <ng-container matColumnDef="{{ column }}" *ngFor="let column of columnsToDisplay">
+          <th mat-header-cell *matHeaderCellDef>{{ column }}</th>
+          <td mat-cell *matCellDef="let element">{{ element[column] }}</td>
+        </ng-container>
+        <ng-container matColumnDef="expand">
+          <th mat-header-cell *matHeaderCellDef aria-label="row actions">
+            &nbsp;
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-icon-button aria-label="expand row" (click)="
+                expandedElement = expandedElement === element ? null : element;
+                $event.stopPropagation()
+              ">
+              <mat-icon *ngIf="expandedElement !== element">keyboard_arrow_down</mat-icon>
+              <mat-icon *ngIf="expandedElement === element">keyboard_arrow_up</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="expandedDetail">
+          <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplayWithExpand.length">
+            <div class="example-element-detail" [@detailExpand]="
+                element == expandedElement ? 'expanded' : 'collapsed'
+              ">
+              <div class="example-element-diagram">
+                <div class="example-element-position">
+                  {{ element.position }}
+                </div>
+                <div class="example-element-symbol">
+                  {{ element.symbol }}
+                </div>
+                <div class="example-element-name">{{ element.name }}</div>
+                <div class="example-element-weight">
+                  {{ element.weight }}
+                </div>
+              </div>
+              <div class="example-element-description">
+                {{ element.description }}
+                <span class="example-element-description-attribution">--Wikipedia</span>
+              </div>
+            </div>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="columnsToDisplayWithExpand"></tr>
+        <tr mat-row *matRowDef="let element; columns: columnsToDisplayWithExpand" class="example-element-row"
+          [class.example-expanded-row]="expandedElement === element" (click)="
+            expandedElement = expandedElement === element ? null : element
+          "></tr>
+        <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+      </table>
+    </mat-card>
+  </mat-tab>
+</mat-tab-group>
+
+
+<!-- Grid Form -->
+
+<ng-template #gridForm>
+  <form [formGroup]="gridform" (ngSubmit)="formmode ? addNew() : updateSelectedRow()">
+    <h1 mat-dialog-title>
+      <span class="text-white"> {{ formmode ? "Add New" : "Update Row" }}</span>
+    </h1>
+    <div mat-dialog-content>
+      <mat-form-field appearance="outline">
+        <mat-label for="make">Make</mat-label>
+        <input matInput id="make" type="text" formControlName="make" />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label for="model">Model</mat-label>
+        <input matInput id="model" type="text" formControlName="model" />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label for="price">Price</mat-label>
+        <input matInput id="price" type="number" formControlName="price" />
+      </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+      <button mat-button mat-dialog-close color="primary">Close</button>
+      <button type="submit" mat-button color="primary">
+        {{ formmode ? "Add" : "Update" }}
+      </button>
+    </div>
+  </form>
+</ng-template>
+
+<!-- Table Form -->
+
+<ng-template #myForm>
+  <form [formGroup]="form" (ngSubmit)="formmode ? addNewElement() : updateData()">
+    <h1 mat-dialog-title>
+      <span class="text-white">{{
+        formmode ? "Add New Element" : "Update Element"
+        }}</span>
+    </h1>
+    <div mat-dialog-content>
+      <mat-form-field>
+        <mat-label for="name">Element Name </mat-label>
+        <input matInput id="name" type="text" formControlName="name" required />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label for="weight">Weight </mat-label>
+        <input matInput id="weight" type="number" formControlName="weight" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label for="symbol">Symbol </mat-label>
+        <input matInput id="symbol" type="text" formControlName="symbol" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Select Type of Element</mat-label>
+        <mat-select [(value)]="selected" formControlName="type">
+          <mat-option>None</mat-option>
+          <mat-option value="Alkali metals">Alkali metals</mat-option>
+          <mat-option value="Alkaline earth metals">
+            Alkaline earth metals
+          </mat-option>
+          <mat-option value="Transition metals">Transition metals</mat-option>
+          <mat-option value="Post-transition metals">Post-transition metals</mat-option>
+          <mat-option value="Metalloids">Metalloids</mat-option>
+          <mat-option value="Reactive non-metals">Reactive non-metals</mat-option>
+          <mat-option value="Noble gases">Noble gases</mat-option>
+          <mat-option value="Lanthanides">Lanthanides</mat-option>
+          <mat-option value="Actinides">Actinides</mat-option>
+          <mat-option value="Unknown properties">Unknown properties</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="w-50">
+        <mat-label>Description</mat-label>
+        <textarea matInput rows="5" formControlName="description"></textarea>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Enter a date range</mat-label>
+        <mat-date-range-input [rangePicker]="picker">
+          <input matStartDate formControlName="startdate" placeholder="Start date" />
+          <input matEndDate formControlName="enddate" placeholder="End date" />
+        </mat-date-range-input>
+        <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker touchUi #picker></mat-date-range-picker>
+
+        <mat-error *ngIf="form.controls.startdate.hasError('matStartDateInvalid')">Invalid start date</mat-error>
+        <mat-error *ngIf="form.controls.enddate.hasError('matEndDateInvalid')">Invalid end date</mat-error>
+      </mat-form-field>
+
+      <!-- <mat-form-field>
+        <mat-label for="date">Date</mat-label>
+        <input matInput id="date" type="date" formControlName="date">
+      </mat-form-field> -->
+    </div>
+    <div mat-dialog-actions>
+      <div mat-dialog-actions>
+        <button mat-button mat-dialog-close color="primary">Close</button>
+        <button type="submit" mat-button color="primary">
+          {{ formmode ? "Add" : "Update" }}
+        </button>
+      </div>
+    </div>
+  </form>
+</ng-template>
+
+<!-- Bottom Sheet -->
+
+<ng-template #bottom>
+  <mat-nav-list>
+    <a href="https://keep.google.com/" mat-list-item>
+      <span matListItemTitle>Google Keep</span>
+      <span matLine>Add to a note</span>
+    </a>
+
+    <a href="https://docs.google.com/" mat-list-item>
+      <span matListItemTitle>Google Docs</span>
+      <span matLine>Embed in a document</span>
+    </a>
+
+    <a href="https://plus.google.com/" mat-list-item>
+      <span matListItemTitle>Google Plus</span>
+      <span matLine>Share with your friends</span>
+    </a>
+
+    <a href="https://hangouts.google.com/" mat-list-item>
+      <span matListItemTitle>Google Hangouts</span>
+      <span matLine>Show to your coworkers</span>
+    </a>
+  </mat-nav-list>
+</ng-template>
+
+
+
+<!-- * *tfsssfd * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<router-outlet></router-outlet>
