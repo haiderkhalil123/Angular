@@ -72,22 +72,6 @@ Contributions are welcome! If you find any issues or want to add new features, p
 
 ### ScreenShots
 
-![High Chart](<img src="src/assets/images/Screenshot (26).png" alt="Hight Chart" width="80" height="80">)
-
-![High Chart](<img src="src/assets/images/Screenshot (27).png" alt="Hight Chart" width="80" height="80">)
-
-![High Chart](<img src="src/assets/images/Screenshot (28).png" alt="Hight Chart" width="80" height="80">)
-
-![High Chart](<img src="src/assets/images/Screenshot (29).png" alt="Hight Chart" width="80" height="80">)
-
-![High Chart](<img src="src/assets/images/Screenshot (31).png" alt="Hight Chart" width="80" height="80">)
-
-![High Chart](<img src="src/assets/images/Screenshot (32).png" alt="Hight Chart" width="80" height="80">)
-
-![High Chart](<img src="src/assets/images/Screenshot (33).png" alt="Hight Chart" width="80" height="80">)
-
-![High Chart](<img src="src/assets/images/Screenshot (34).png" alt="Hight Chart" width="80" height="80">)
-
 ![3D and Neagtive Values Chart](https://github.com/haiderkhalil123/Angular/assets/139443148/feb6fb3e-309e-42e2-bbdd-bdab61f7cb96)
 
 ![Pie Chart](https://github.com/haiderkhalil123/Angular/assets/139443148/8d8855f3-c53e-426d-aa2a-a68fee5ff180)
