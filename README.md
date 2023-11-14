@@ -8,7 +8,7 @@ This Angular project demonstrates the integration of various powerful libraries 
 
 - [Highcharts](https://www.highcharts.com/): Interactive JavaScript charts for your web pages.
 - [Angular Material Table](https://material.angular.io/components/table/overview): A set of UI components for building high-quality, responsive user interfaces.
-- [Angular Material Expandable Table]([https://github.com/elhigu/material-table](https://github.com/elhigu/material-table): An extension for Angular Material Table that allows rows to be expanded to show additional content.
+- [Angular Material Expandable Table](https://github.com/elhigu/material-table): An extension for Angular Material Table that allows rows to be expanded to show additional content.
 - [Angular Gantt Chart](https://www.angular-gantt.com/): A Gantt chart component for Angular.
 - [AG Grid](https://www.ag-grid.com/): A feature-rich Angular grid library.
 
